@@ -16,12 +16,12 @@ Build command: npm run build
 
 Package manager: npm
 
-Output directory: .output/public
+Output directory: dist/client
 
 ═══════════════════════════════════════════════════════════
 
-⚠️ IMPORTANTE: O output directory é .output/public (não dist)
-   porque o TanStack Start gera os arquivos nesta pasta.
+⚠️ IMPORTANTE: O output directory é dist/client
+   O TanStack Start gera os arquivos estáticos nesta pasta.
 
 ═══════════════════════════════════════════════════════════
 
@@ -29,7 +29,7 @@ Output directory: .output/public
 
 [ ] Fiz push para o GitHub
 [ ] Conectei GitHub na Hostinger
-[ ] Copiei as configurações acima
+[ ] Copiei as configurações acima (output: dist/client)
 [ ] Cliquei em "Save and redeploy"
 [ ] Aguardei 5-10 minutos
 [ ] Testei o site no domínio
