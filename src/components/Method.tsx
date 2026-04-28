@@ -18,7 +18,7 @@ export function Method() {
           </div>
           <div className="col-span-12 md:col-span-10">
             <h2 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight">
-              Cinco <span className="italic text-gradient">vetores</span>. <br />
+              Cinco <span className="italic text-gradient">vetores</span> de crescimento. <br />
               <span className="text-foreground/40">Um único método.</span>
             </h2>
           </div>

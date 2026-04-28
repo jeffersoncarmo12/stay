@@ -102,9 +102,9 @@ export function Hero() {
             <div className="hairline mb-6" />
             <div className="grid grid-cols-3 gap-6">
               {[
-                { n: "05", l: "Marcas conectadas" },
-                { n: "10K+", l: "Profissionais ativos" },
-                { n: "MMXXVI", l: "Ciclo atual" },
+                { n: "05+", l: "Empresas integradas" },
+                { n: "+70K", l: "Profissionais na base" },
+                { n: "2026", l: "Crescimento acelerado" },
               ].map((s) => (
                 <div key={s.l}>
                   <div className="font-display text-3xl md:text-5xl text-paper">{s.n}</div>
