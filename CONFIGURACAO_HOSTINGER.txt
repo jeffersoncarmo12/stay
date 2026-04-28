@@ -16,7 +16,12 @@ Build command: npm run build
 
 Package manager: npm
 
-Output directory: dist
+Output directory: .output/public
+
+═══════════════════════════════════════════════════════════
+
+⚠️ IMPORTANTE: O output directory é .output/public (não dist)
+   porque o TanStack Start gera os arquivos nesta pasta.
 
 ═══════════════════════════════════════════════════════════
 
@@ -26,7 +31,7 @@ Output directory: dist
 [ ] Conectei GitHub na Hostinger
 [ ] Copiei as configurações acima
 [ ] Cliquei em "Save and redeploy"
-[ ] Aguardei 2-5 minutos
+[ ] Aguardei 5-10 minutos
 [ ] Testei o site no domínio
 
 ═══════════════════════════════════════════════════════════
@@ -34,6 +39,6 @@ Output directory: dist
 🔗 LINKS ÚTEIS:
 
 hPanel: https://hpanel.hostinger.com
-Documentação: README_DEPLOY.md
+Documentação: DEPLOY_HOSTINGER.md
 
 ═══════════════════════════════════════════════════════════

@@ -1,43 +1,94 @@
-# 🚀 Guia de Deploy para Hostinger via GitHub
+# 🚀 Deploy Automático na Hostinger via GitHub
 
-Este guia explica como fazer o deploy automático do seu projeto React na Hostinger usando GitHub.
+## ⚠️ IMPORTANTE: TanStack Start + Hostinger
 
-## 📋 Pré-requisitos
+Este projeto usa **TanStack Start** (framework SSR), mas a Hostinger suporta apenas **Node.js Web Apps**. 
 
-- Conta na Hostinger com plano de hospedagem web
-- Repositório GitHub com o código do projeto
-- Acesso ao painel de controle (hPanel)
+## � Configuração na Hostinger
 
-## 🔗 Configuração do Deploy Automático via GitHub
+### Passo 1: Push para GitHub
 
-### Passo 1: Conectar GitHub à Hostinger
+```bash
+git add .
+git commit -m "Deploy para Hostinger"
+git push origin main
+```
 
-1. Acesse o **hPanel** da Hostinger
-2. Vá em **Websites** → Clique em **Add website**
+### Passo 2: Conectar GitHub na Hostinger
+
+1. Acesse [hPanel da Hostinger](https://hpanel.hostinger.com)
+2. Clique em **Add website**
 3. Selecione **Node.js Web App**
 4. Clique em **Connect to GitHub**
-5. Autorize a Hostinger a acessar seu repositório
-6. Selecione o repositório do projeto
+5. Autorize e selecione seu repositório
 
-### Passo 2: Configurar Build Settings
+### Passo 3: Configurar Build Settings
 
-Na tela "Settings and redeploy", configure:
+**IMPORTANTE**: Use EXATAMENTE estas configurações:
 
 ```
 Framework preset: Vite
-Branch: main (ou sua branch principal)
+Branch: main
 Node version: 22.x
 Root directory: /
 Build command: npm run build
 Package manager: npm
-Output directory: dist
+Output directory: .output/public
 ```
 
-### Passo 3: Salvar e Deploy
+⚠️ **ATENÇÃO**: O output directory é `.output/public` (não `dist`), pois o TanStack Start gera os arquivos nesta pasta.
+
+### Passo 4: Deploy
 
 1. Clique em **Save and redeploy**
-2. Aguarde o build completar (pode levar 2-5 minutos)
-3. Acesse seu domínio para verificar
+2. Aguarde 5-10 minutos (primeiro build demora mais)
+3. Acesse seu domínio
+
+## 🔄 Deploy Automático
+
+Após a configuração inicial, cada push para `main` faz deploy automático.
+
+## 🐛 Solução de Problemas
+
+### Build falha
+- Verifique os logs no hPanel → Deployments
+- O arquivo `.npmrc` com `legacy-peer-deps=true` já está configurado
+
+### Erro 403 ou 404
+- Aguarde 3-5 minutos após o deploy
+- Limpe o cache do navegador (Ctrl + Shift + R)
+- Verifique se o build completou com sucesso
+
+### Site não carrega corretamente
+- Confirme que o output directory está como `.output/public`
+- Verifique se todas as dependências foram instaladas
+- Veja os Runtime logs no hPanel
+
+## 📊 Estrutura do Build
+
+O TanStack Start gera:
+
+```
+.output/
+├── public/          ← Deploy este diretório
+│   ├── index.html
+│   ├── assets/
+│   └── ...
+└── server/
+```
+
+## 🔗 Atualizações
+
+```bash
+git add .
+git commit -m "Suas alterações"
+git push origin main
+# Deploy automático!
+```
+
+---
+
+**Nota**: Este projeto mantém a estrutura original do Lovable com TanStack Start.
 
 ## 🔄 Deploy Automático
 
