@@ -1,12 +1,29 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Store, GraduationCap, Mic, Building2, Clapperboard, ArrowUpRight } from "lucide-react";
+import {
+  Store,
+  GraduationCap,
+  Mic,
+  Building2,
+  Clapperboard,
+  ArrowUpRight,
+  Globe,
+  Youtube,
+  Instagram,
+  Briefcase,
+  Sparkles,
+  PlayCircle,
+  Users,
+  FileText,
+} from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import logoUnicorretor from "@/assets/logo-unicorretor.jpeg";
 import logoFiqueAqui from "@/assets/logo-fiqueaqui.png";
 import logoStayou from "@/assets/logo-stayou.png";
 import logoStaycast from "@/assets/logo-staycast.png";
 import logoStayPlus from "@/assets/logo-stayplus.png";
+
+type BrandLink = { label: string; href: string; Icon: LucideIcon };
 
 type Brand = {
   id: string;
@@ -18,6 +35,7 @@ type Brand = {
   accent: string;
   num: string;
   Icon: LucideIcon;
+  links: BrandLink[];
 };
 
 const brands: Brand[] = [
@@ -31,6 +49,13 @@ const brands: Brand[] = [
     accent: "oklch(0.55 0.22 305)",
     num: "01",
     Icon: Store,
+    links: [
+      { label: "Site oficial", href: "https://stayou.com.br/", Icon: Globe },
+      { label: "Stayou Business", href: "https://business.stayou.com.br/", Icon: Briefcase },
+      { label: "Portal do Agente", href: "https://agente.stayou.com.br/", Icon: Users },
+      { label: "Apresentação", href: "https://stayempresas.com.br/apresentacao-stayou-click/", Icon: Sparkles },
+      { label: "Vídeo institucional", href: "https://www.youtube.com/watch?v=MvQs26_iA4Q", Icon: PlayCircle },
+    ],
   },
   {
     id: "unicorretor",
@@ -42,6 +67,14 @@ const brands: Brand[] = [
     accent: "oklch(0.7 0.2 40)",
     num: "02",
     Icon: GraduationCap,
+    links: [
+      { label: "Site oficial", href: "https://unicorretor.com.br/", Icon: Globe },
+      { label: "Corporativo", href: "https://corporativo.unicorretor.com.br/", Icon: Briefcase },
+      { label: "Oferta", href: "https://oferta.unicorretor.com.br/", Icon: Sparkles },
+      { label: "YouTube", href: "https://www.youtube.com/@unicorretor", Icon: Youtube },
+      { label: "Instagram", href: "https://www.instagram.com/unicorretor/", Icon: Instagram },
+      { label: "Apresentação", href: "https://stayempresas.com.br/apresentacao-unicorretor/", Icon: FileText },
+    ],
   },
   {
     id: "staycast",
@@ -53,6 +86,11 @@ const brands: Brand[] = [
     accent: "oklch(0.7 0.24 4)",
     num: "03",
     Icon: Mic,
+    links: [
+      { label: "YouTube", href: "https://www.youtube.com/@staycast", Icon: Youtube },
+      { label: "Instagram", href: "https://www.instagram.com/stay.cast/", Icon: Instagram },
+      { label: "Apresentação", href: "https://stayempresas.com.br/apresentacao-stay-cast/", Icon: FileText },
+    ],
   },
   {
     id: "fiqueaqui",
@@ -64,6 +102,12 @@ const brands: Brand[] = [
     accent: "oklch(0.65 0.18 145)",
     num: "04",
     Icon: Building2,
+    links: [
+      { label: "Site oficial", href: "https://fiqueaquiimoveis.com.br/", Icon: Globe },
+      { label: "Vídeo institucional", href: "https://www.youtube.com/watch?v=Dt-nmmoYeRo", Icon: PlayCircle },
+      { label: "Instagram", href: "https://www.instagram.com/fiqueaquiimoveis/", Icon: Instagram },
+      { label: "Apresentação", href: "https://stayempresas.com.br/apresentacao-fique-aqui-imoveis/", Icon: FileText },
+    ],
   },
   {
     id: "stayplus",
@@ -75,6 +119,12 @@ const brands: Brand[] = [
     accent: "oklch(0.7 0.26 350)",
     num: "05",
     Icon: Clapperboard,
+    links: [
+      { label: "Site oficial", href: "https://stayplus.com.br/", Icon: Globe },
+      { label: "Vídeo institucional", href: "https://www.youtube.com/watch?v=O8K2RbOKTwg", Icon: PlayCircle },
+      { label: "Instagram", href: "https://www.instagram.com/stayplusprodutora", Icon: Instagram },
+      { label: "Apresentação", href: "https://drive.google.com/file/d/15AYxbqBt5WmEbkYtrLT2qMx1cBKjUlAH/view", Icon: FileText },
+    ],
   },
 ];
 
