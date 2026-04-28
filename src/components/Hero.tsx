@@ -1,55 +1,61 @@
-import logoStay from "@/assets/logo-stay.webp";
+import { ArrowRight } from "lucide-react";
+import heroImg from "@/assets/hero-dashboard.jpg";
 
 export function Hero() {
   return (
-    <section id="top" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-hero-gradient">
-      {/* floating orbs */}
-      <div className="absolute top-1/4 left-10 w-72 h-72 rounded-full bg-primary/20 blur-3xl animate-pulse-glow" />
-      <div className="absolute bottom-1/4 right-10 w-96 h-96 rounded-full bg-brand-stayou/20 blur-3xl animate-pulse-glow" style={{ animationDelay: "2s" }} />
+    <section id="top" className="relative min-h-screen pt-32 pb-20 overflow-hidden bg-mesh">
+      <div className="absolute inset-0 grid-pattern opacity-40 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_30%,black,transparent)]" />
 
-      <div className="relative z-10 mx-auto max-w-5xl px-6 text-center pt-24">
-        <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-2 mb-8 text-xs font-medium text-muted-foreground">
-          <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
-          Holding de inovação imobiliária
+      <div className="relative mx-auto max-w-6xl px-6">
+        <div className="text-center max-w-4xl mx-auto">
+          <a
+            href="#ecossistema"
+            className="inline-flex items-center gap-2 rounded-full glass px-3.5 py-1.5 mb-8 text-xs text-muted-foreground hover:text-foreground transition group"
+          >
+            <span className="h-1.5 w-1.5 rounded-full bg-violet animate-pulse" />
+            Holding de tecnologia imobiliária
+            <ArrowRight className="h-3 w-3 group-hover:translate-x-0.5 transition-transform" />
+          </a>
+
+          <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-semibold tracking-[-0.04em] leading-[0.95]">
+            O futuro do mercado <br />
+            imobiliário <span className="text-gradient">começa aqui.</span>
+          </h1>
+
+          <p className="mt-7 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Tecnologia, mídia e educação em um único ecossistema que conecta corretores, imobiliárias e incorporadoras.
+          </p>
+
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a
+              href="#ecossistema"
+              className="group inline-flex items-center gap-2 rounded-full bg-foreground text-background px-6 py-3 text-sm font-semibold hover:bg-foreground/90 transition shadow-soft"
+            >
+              Conhecer ecossistema
+              <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
+            </a>
+            <a
+              href="#contato"
+              className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 text-sm font-semibold hover:bg-white/5 transition"
+            >
+              Falar com especialista
+            </a>
+          </div>
         </div>
 
-        <img src={logoStay} alt="Stay" className="h-16 md:h-20 mx-auto mb-6 animate-float" />
-
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.95]">
-          Ecossistema de <br />
-          <span className="text-gradient">inovação imobiliária</span>
-        </h1>
-
-        <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-          Uma holding de marcas que conecta tecnologia, educação e performance para transformar o mercado imobiliário brasileiro.
-        </p>
-
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href="#empresas"
-            className="inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold bg-primary text-primary-foreground hover:opacity-90 transition shadow-glow"
-          >
-            Conheça nossas empresas
-          </a>
-          <a
-            href="#sobre"
-            className="inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold glass hover:bg-white/10 transition"
-          >
-            Nossa história →
-          </a>
-        </div>
-
-        <div className="mt-20 grid grid-cols-3 gap-8 max-w-2xl mx-auto">
-          {[
-            { n: "5+", l: "Empresas" },
-            { n: "10k+", l: "Corretores" },
-            { n: "100%", l: "Foco no mercado" },
-          ].map((s) => (
-            <div key={s.l} className="text-center">
-              <div className="text-3xl md:text-4xl font-bold font-display text-gradient">{s.n}</div>
-              <div className="text-xs md:text-sm text-muted-foreground mt-1">{s.l}</div>
-            </div>
-          ))}
+        {/* Dashboard visual */}
+        <div className="relative mt-20 md:mt-28 reveal">
+          <div className="absolute -inset-x-20 -top-10 -bottom-10 bg-gradient-to-b from-violet/10 via-azure/10 to-transparent blur-3xl opacity-60" />
+          <div className="relative rounded-2xl overflow-hidden ring-soft shadow-glow">
+            <img
+              src={heroImg}
+              alt="Dashboard do ecossistema Stay"
+              width={1600}
+              height={1200}
+              className="w-full h-auto"
+            />
+            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+          </div>
         </div>
       </div>
     </section>
