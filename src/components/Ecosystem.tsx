@@ -17,7 +17,7 @@ import {
   FileText,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import logoUnicorretor from "@/assets/logo-unicorretor.jpeg";
+import logoUnicorretor from "@/assets/logo_unicorretor.png";
 import logoFiqueAqui from "@/assets/logo-fiqueaqui.png";
 import logoStayou from "@/assets/logo-stayou.png";
 import logoStaycast from "@/assets/logo-staycast.png";
