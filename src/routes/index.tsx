@@ -5,6 +5,7 @@ import { Marquee } from "@/components/Marquee";
 import { Manifesto } from "@/components/Manifesto";
 import { Ecosystem } from "@/components/Ecosystem";
 import { Consulting } from "@/components/Consulting";
+import { AI } from "@/components/AI";
 import { Clients } from "@/components/Clients";
 import { Method } from "@/components/Method";
 import { Field } from "@/components/Field";
