@@ -1,26 +1,37 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/Navbar";
+import { Hero } from "@/components/Hero";
+import { CompaniesSection } from "@/components/CompaniesSection";
+import { StorySection } from "@/components/StorySection";
+import { JoinSection } from "@/components/JoinSection";
+import { Footer } from "@/components/Footer";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Stay Empresas — Ecossistema de inovação imobiliária" },
+      {
+        name: "description",
+        content:
+          "Holding Stay Empresas: UniCorretor, Fique Aqui Imóveis, Stayou, StayCast e Stay Plus. Tecnologia, educação e performance para o mercado imobiliário.",
+      },
+      { property: "og:title", content: "Stay Empresas — Ecossistema de inovação imobiliária" },
+      { property: "og:description", content: "Holding de marcas que conecta tecnologia, educação e performance para transformar o mercado imobiliário." },
+      { property: "og:type", content: "website" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <main className="min-h-screen">
+      <Navbar />
+      <Hero />
+      <CompaniesSection />
+      <StorySection />
+      <JoinSection />
+      <Footer />
+    </main>
+  );
 }
