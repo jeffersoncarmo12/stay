@@ -1,22 +1,26 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
-import { CompaniesSection } from "@/components/CompaniesSection";
-import { StorySection } from "@/components/StorySection";
-import { JoinSection } from "@/components/JoinSection";
+import { About } from "@/components/About";
+import { Ecosystem } from "@/components/Ecosystem";
+import { Differentials } from "@/components/Differentials";
+import { ForWho } from "@/components/ForWho";
+import { Results } from "@/components/Results";
+import { CTA } from "@/components/CTA";
 import { Footer } from "@/components/Footer";
+import { useReveal } from "@/hooks/use-reveal";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Stay Empresas — Ecossistema de inovação imobiliária" },
+      { title: "Stay Empresas — Ecossistema de tecnologia para o mercado imobiliário" },
       {
         name: "description",
         content:
-          "Holding Stay Empresas: UniCorretor, Fique Aqui Imóveis, Stayou, StayCast e Stay Plus. Tecnologia, educação e performance para o mercado imobiliário.",
+          "Holding de tecnologia, mídia e educação que conecta corretores, imobiliárias e incorporadoras. Stayou, UniCorretor, StayCast, Fique Aqui Imóveis e Stay Plus.",
       },
-      { property: "og:title", content: "Stay Empresas — Ecossistema de inovação imobiliária" },
-      { property: "og:description", content: "Holding de marcas que conecta tecnologia, educação e performance para transformar o mercado imobiliário." },
+      { property: "og:title", content: "Stay Empresas — O futuro do mercado imobiliário começa aqui" },
+      { property: "og:description", content: "Tecnologia, mídia e educação em um único ecossistema." },
       { property: "og:type", content: "website" },
     ],
   }),
@@ -24,13 +28,17 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  useReveal();
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen overflow-x-hidden">
       <Navbar />
       <Hero />
-      <CompaniesSection />
-      <StorySection />
-      <JoinSection />
+      <About />
+      <Ecosystem />
+      <Differentials />
+      <ForWho />
+      <Results />
+      <CTA />
       <Footer />
     </main>
   );
