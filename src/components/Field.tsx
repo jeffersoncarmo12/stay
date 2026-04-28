@@ -19,10 +19,9 @@ const audiences = [
 ];
 
 const stats = [
-  { n: "10K+", l: "Profissionais" },
-  { n: "5M+", l: "Alcance / mês" },
-  { n: "+R$1Bi", l: "Pipeline potencial" },
-  { n: "500+", l: "Conteúdos publicados" },
+  { n: "05+", l: "Empresas integradas" },
+  { n: "+70.000", l: "Profissionais na base" },
+  { n: "2026", l: "Crescimento acelerado" },
 ];
 
 export function Field() {
