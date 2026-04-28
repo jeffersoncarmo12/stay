@@ -38,6 +38,7 @@ function Index() {
       <Manifesto />
       <Ecosystem />
       <Consulting />
+      <AI />
       <Clients />
       <Method />
       <Field />
