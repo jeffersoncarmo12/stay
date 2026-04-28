@@ -1,0 +1,53 @@
+═══════════════════════════════════════════════════════════
+  CONFIGURAÇÃO SSR PARA HOSTINGER
+═══════════════════════════════════════════════════════════
+
+📋 MUDE PARA ESTA CONFIGURAÇÃO:
+
+Framework preset: Other
+
+Branch: main
+
+Node version: 22.x
+
+Root directory: /
+
+Build command: npm run build
+
+Package manager: npm
+
+Entry file: dist/server/index.js
+
+Application port: 3000
+
+═══════════════════════════════════════════════════════════
+
+⚠️ IMPORTANTE: 
+- Entry file: dist/server/index.js (NÃO server.js)
+- Isso usa o servidor SSR real do TanStack Start
+
+═══════════════════════════════════════════════════════════
+
+✅ PASSOS:
+
+1. Vá em Settings and redeploy
+2. Mude Entry file para: dist/server/index.js
+3. Clique em "Save and redeploy"
+4. Aguarde 5-10 minutos
+
+═══════════════════════════════════════════════════════════
+
+🔧 SE NÃO FUNCIONAR:
+
+Use Cloudflare Pages (GRÁTIS e já configurado):
+1. Acesse: https://pages.cloudflare.com
+2. Conecte seu GitHub
+3. Selecione o repositório
+4. Framework: TanStack Start
+5. Build command: npm run build
+6. Output: dist
+7. Deploy!
+
+O Lovable usa Cloudflare, por isso funciona lá.
+
+═══════════════════════════════════════════════════════════
