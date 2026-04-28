@@ -3,9 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
   { href: "#ecossistema", label: "Ecossistema", num: "02" },
-  { href: "#manifesto", label: "Manifesto", num: "03" },
-  { href: "#diferenciais", label: "Método", num: "04" },
-  { href: "#campo", label: "Campo", num: "05" },
+  { href: "#consultoria", label: "Consultoria", num: "03" },
+  { href: "#clientes", label: "Clientes", num: "04" },
+  { href: "#diferenciais", label: "Método", num: "05" },
+  { href: "#campo", label: "Campo", num: "06" },
 ];
 
 export function Navbar() {

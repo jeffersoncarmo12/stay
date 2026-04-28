@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { Store, GraduationCap, Mic, Building2, Clapperboard, ArrowUpRight } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import logoUnicorretor from "@/assets/logo-unicorretor.jpeg";
 import logoFiqueAqui from "@/assets/logo-fiqueaqui.png";
 import logoStayou from "@/assets/logo-stayou.png";
@@ -15,6 +17,7 @@ type Brand = {
   href: string;
   accent: string;
   num: string;
+  Icon: LucideIcon;
 };
 
 const brands: Brand[] = [
@@ -27,6 +30,7 @@ const brands: Brand[] = [
     href: "https://stayou.com.br/",
     accent: "oklch(0.55 0.22 305)",
     num: "01",
+    Icon: Store,
   },
   {
     id: "unicorretor",
@@ -37,6 +41,7 @@ const brands: Brand[] = [
     href: "https://unicorretor.com.br/",
     accent: "oklch(0.7 0.2 40)",
     num: "02",
+    Icon: GraduationCap,
   },
   {
     id: "staycast",
@@ -47,6 +52,7 @@ const brands: Brand[] = [
     href: "https://www.youtube.com/@staycast",
     accent: "oklch(0.7 0.24 4)",
     num: "03",
+    Icon: Mic,
   },
   {
     id: "fiqueaqui",
@@ -57,6 +63,7 @@ const brands: Brand[] = [
     href: "https://fiqueaquiimoveis.com.br/",
     accent: "oklch(0.65 0.18 145)",
     num: "04",
+    Icon: Building2,
   },
   {
     id: "stayplus",
@@ -67,6 +74,7 @@ const brands: Brand[] = [
     href: "https://stayplus.com.br/",
     accent: "oklch(0.7 0.26 350)",
     num: "05",
+    Icon: Clapperboard,
   },
 ];
 
@@ -99,49 +107,75 @@ export function Ecosystem() {
         <div className="grid grid-cols-12 gap-4 md:gap-8">
           {/* Index list */}
           <div className="col-span-12 md:col-span-7 border-t border-border">
-            {brands.map((b) => (
-              <div
-                key={b.id}
-                onMouseEnter={() => setActive(b.id)}
-                className="group relative border-b border-border py-8 md:py-10 cursor-pointer transition-colors"
-              >
+            {brands.map((b) => {
+              const Icon = b.Icon;
+              const isActive = active === b.id;
+              return (
                 <a
+                  key={b.id}
                   href={b.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="grid grid-cols-12 gap-4 items-baseline"
+                  onMouseEnter={() => setActive(b.id)}
+                  className="group relative block border-b border-border py-7 md:py-9 cursor-pointer outline-none focus-visible:bg-white/[0.03] active:scale-[0.995] transition-transform"
+                  style={{ perspective: "1000px" }}
                 >
-                  <span className="col-span-2 md:col-span-1 font-mono text-xs text-muted-foreground/60 pt-2">
-                    /{b.num}
-                  </span>
-                  <div className="col-span-10 md:col-span-7">
-                    <h3
-                      className={`font-display text-4xl md:text-6xl tracking-tight transition-all duration-500 ${
-                        active === b.id ? "text-paper translate-x-2" : "text-foreground/40"
+                  <div className="grid grid-cols-12 gap-4 items-center">
+                    <span className="col-span-2 md:col-span-1 font-mono text-xs text-muted-foreground/60">
+                      /{b.num}
+                    </span>
+
+                    {/* Icon chip with depth + glow on hover */}
+                    <div className="col-span-2 md:col-span-1">
+                      <div
+                        className="relative h-11 w-11 md:h-12 md:w-12 rounded-xl flex items-center justify-center ring-soft transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-0.5 group-active:scale-95"
+                        style={{
+                          background: isActive
+                            ? `linear-gradient(135deg, ${b.accent}, oklch(0.18 0.02 270))`
+                            : "oklch(1 0 0 / 0.03)",
+                          boxShadow: isActive
+                            ? `0 12px 30px -10px ${b.accent}, inset 0 1px 0 oklch(1 0 0 / 0.15)`
+                            : "inset 0 0 0 1px oklch(1 0 0 / 0.06)",
+                          transform: isActive ? "rotateX(8deg) rotateY(-8deg)" : "none",
+                          transformStyle: "preserve-3d",
+                        }}
+                      >
+                        <Icon
+                          className={`h-5 w-5 transition-colors duration-500 ${isActive ? "text-paper" : "text-foreground/50 group-hover:text-paper"}`}
+                          strokeWidth={1.5}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="col-span-8 md:col-span-6">
+                      <h3
+                        className={`font-display text-3xl md:text-5xl tracking-tight transition-all duration-500 ${
+                          isActive ? "text-paper translate-x-2" : "text-foreground/40 group-hover:text-foreground/70"
+                        }`}
+                      >
+                        {b.name}
+                      </h3>
+                    </div>
+                    <span className="hidden md:block col-span-3 marker">{b.category}</span>
+                    <span
+                      className={`hidden md:flex col-span-1 items-center justify-end transition-all duration-500 ${
+                        isActive ? "text-paper opacity-100 translate-x-0" : "text-paper opacity-30 -translate-x-2"
                       }`}
                     >
-                      {b.name}
-                    </h3>
+                      <ArrowUpRight className="h-5 w-5" strokeWidth={1.5} />
+                    </span>
                   </div>
-                  <span className="hidden md:block col-span-3 marker">{b.category}</span>
-                  <span
-                    className={`hidden md:flex col-span-1 items-center justify-end text-xl transition-all duration-500 ${
-                      active === b.id ? "text-paper opacity-100 translate-x-0" : "text-paper opacity-30 -translate-x-2"
-                    }`}
-                  >
-                    →
-                  </span>
+                  {/* underline accent */}
+                  <div
+                    className="absolute bottom-[-1px] left-0 h-px transition-all duration-700"
+                    style={{
+                      width: isActive ? "100%" : "0%",
+                      background: `linear-gradient(90deg, ${b.accent}, transparent)`,
+                    }}
+                  />
                 </a>
-                {/* underline accent */}
-                <div
-                  className={`absolute bottom-[-1px] left-0 h-px transition-all duration-700`}
-                  style={{
-                    width: active === b.id ? "100%" : "0%",
-                    background: b.accent,
-                  }}
-                />
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Sticky visual panel */}
