@@ -77,7 +77,7 @@ export function Field() {
           <div className="col-span-12 md:col-span-3">
             <span className="marker">Resultados em campo</span>
             <p className="mt-3 text-foreground/60 text-sm leading-relaxed">
-              Dados consolidados do ecossistema Stay no ciclo MMXXVI.
+              Dados consolidados do ecossistema Stay em 2026.
             </p>
           </div>
           {stats.map((s, i) => (
@@ -87,7 +87,7 @@ export function Field() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 + i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className={`col-span-6 md:col-span-2 ${i === 3 ? "md:col-start-11" : ""}`}
+              className="col-span-6 md:col-span-3"
             >
               <div className="font-display text-4xl md:text-6xl lg:text-7xl text-paper tracking-tight">{s.n}</div>
               <div className="marker mt-2">{s.l}</div>
