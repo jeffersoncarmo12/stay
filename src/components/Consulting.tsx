@@ -55,11 +55,17 @@ export function Consulting() {
         </div>
 
         {/* Pillars — asymmetric staggered grid */}
-        <div className="grid grid-cols-12 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-4 md:gap-6">
           {pillars.map((p, i) => {
             const Icon = p.icon;
-            // Staircase composition
-            const offsets = ["", "md:mt-10", "md:mt-20", "md:mt-4", "md:mt-14"];
+            // Staircase composition + asymmetric spans
+            const layout = [
+              "col-span-2 md:col-span-2",
+              "col-span-2 md:col-span-2 md:mt-12",
+              "col-span-2 md:col-span-2 md:mt-24",
+              "col-span-2 md:col-span-3 md:col-start-2 md:mt-6",
+              "col-span-2 md:col-span-3 md:mt-16",
+            ];
             return (
               <motion.div
                 key={p.title}
@@ -67,7 +73,7 @@ export function Consulting() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 1, delay: i * 0.09, ease: [0.16, 1, 0.3, 1] }}
-                className={`col-span-12 sm:col-span-6 lg:col-span-4 xl:col-span-${i === 4 ? "4" : "3"} ${offsets[i]}`}
+                className={layout[i]}
               >
                 <div className="group relative h-full rounded-2xl p-7 md:p-8 glass ring-soft overflow-hidden transition-all duration-700 hover:-translate-y-1 hover:bg-white/[0.04]">
                   {/* corner glow */}
