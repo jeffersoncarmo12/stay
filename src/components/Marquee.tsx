@@ -16,10 +16,10 @@ export function Marquee() {
       <div className="flex animate-marquee whitespace-nowrap will-change-transform">
         {sequence.map((name, i) => (
           <div key={i} className="flex items-center gap-6 mx-10 shrink-0">
-            <div className="h-10 w-10 rounded-full bg-white/[0.04] ring-soft p-1.5 flex items-center justify-center">
+            <div className="h-10 w-10 rounded-full bg-white/10 ring-soft p-1.5 flex items-center justify-center backdrop-blur-sm">
               <img src={logoSeq[i]} alt="" className="max-h-full max-w-full object-contain logo-mono" />
             </div>
-            <span className="font-display text-3xl md:text-4xl text-paper/40 italic">{name}</span>
+            <span className="font-display text-3xl md:text-4xl text-paper/50 italic">{name}</span>
             <span className="text-paper/20 text-2xl">✦</span>
           </div>
         ))}
