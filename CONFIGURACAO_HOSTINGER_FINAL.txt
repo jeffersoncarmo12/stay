@@ -1,0 +1,51 @@
+═══════════════════════════════════════════════════════════
+  CONFIGURAÇÃO FINAL PARA HOSTINGER (Node.js)
+═══════════════════════════════════════════════════════════
+
+📋 USE ESTA CONFIGURAÇÃO:
+
+Framework preset: Node.js
+
+Branch: main
+
+Node version: 22.x
+
+Root directory: /
+
+Build command: npm run build
+
+Package manager: npm
+
+Application startup command: npm start
+
+Application port: 3000
+
+═══════════════════════════════════════════════════════════
+
+⚠️ IMPORTANTE: 
+- Framework: Node.js (NÃO Vite)
+- Startup command: npm start (não um arquivo)
+- Isso roda um servidor Node.js simples
+
+═══════════════════════════════════════════════════════════
+
+✅ PASSOS:
+
+1. Faça push do código atualizado (já feito)
+2. Vá em Settings and redeploy na Hostinger
+3. Mude Framework preset para "Node.js"
+4. Configure Application startup command: npm start
+5. Configure Application port: 3000
+6. Clique em "Save and redeploy"
+7. Aguarde 5-10 minutos
+
+═══════════════════════════════════════════════════════════
+
+📝 O QUE FOI FEITO:
+
+Criamos um servidor Node.js simples (server.js) que:
+- Serve os arquivos estáticos de dist/client/
+- Faz roteamento SPA (todas as rotas servem index.html)
+- Funciona em qualquer hospedagem Node.js
+
+═══════════════════════════════════════════════════════════

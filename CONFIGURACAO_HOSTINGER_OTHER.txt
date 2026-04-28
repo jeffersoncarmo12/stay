@@ -1,0 +1,62 @@
+═══════════════════════════════════════════════════════════
+  CONFIGURAÇÃO PARA HOSTINGER - Framework "Other"
+═══════════════════════════════════════════════════════════
+
+📋 USE EXATAMENTE ESTA CONFIGURAÇÃO:
+
+Framework preset: Other
+
+Branch: main
+
+Node version: 22.x
+
+Root directory: /
+
+Build command: npm run build
+
+Package manager: npm
+
+Application startup command: npm start
+
+Application port: 3000
+
+═══════════════════════════════════════════════════════════
+
+⚠️ IMPORTANTE: 
+- Framework: Other (não Vite, não Next.js)
+- Startup command: npm start
+- Port: 3000
+
+═══════════════════════════════════════════════════════════
+
+✅ PASSO A PASSO:
+
+1. Acesse: https://hpanel.hostinger.com
+2. Vá no seu site → Settings and redeploy
+3. Mude Framework preset para "Other"
+4. Preencha os campos acima
+5. Clique em "Save and redeploy"
+6. Aguarde 5-10 minutos
+7. Teste o site
+
+═══════════════════════════════════════════════════════════
+
+📝 O QUE ACONTECE:
+
+1. npm install - Instala dependências
+2. npm run build - Gera dist/client/ e dist/server/
+3. npm start - Inicia servidor Node.js (server.js)
+4. Servidor serve arquivos de dist/client/
+5. Site fica acessível na porta 3000
+
+═══════════════════════════════════════════════════════════
+
+🔧 SE NÃO FUNCIONAR:
+
+Tente estas alternativas na ordem:
+
+1. Framework: React (pode funcionar)
+2. Framework: Vite + Output: dist/client
+3. Use Cloudflare Pages (grátis e já configurado)
+
+═══════════════════════════════════════════════════════════

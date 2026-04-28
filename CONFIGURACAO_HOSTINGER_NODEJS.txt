@@ -1,0 +1,46 @@
+═══════════════════════════════════════════════════════════
+  CONFIGURAÇÃO NODE.JS PARA HOSTINGER
+═══════════════════════════════════════════════════════════
+
+📋 TENTE ESTA CONFIGURAÇÃO:
+
+Framework preset: Node.js (NÃO Vite)
+
+Branch: main
+
+Node version: 22.x
+
+Root directory: /
+
+Build command: npm run build
+
+Package manager: npm
+
+Application startup file: dist/server/index.js
+
+Application port: 3000
+
+═══════════════════════════════════════════════════════════
+
+⚠️ IMPORTANTE: 
+- Framework: Node.js (não Vite)
+- Startup file: dist/server/index.js
+- Isso roda o servidor SSR do TanStack Start
+
+═══════════════════════════════════════════════════════════
+
+✅ PASSOS:
+
+1. Vá em Settings and redeploy
+2. Mude Framework preset para "Node.js"
+3. Configure Application startup file: dist/server/index.js
+4. Configure Application port: 3000
+5. Clique em "Save and redeploy"
+6. Aguarde 5-10 minutos
+
+═══════════════════════════════════════════════════════════
+
+🔗 Se não funcionar, use Cloudflare Pages (grátis):
+https://pages.cloudflare.com
+
+═══════════════════════════════════════════════════════════
