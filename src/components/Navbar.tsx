@@ -5,8 +5,9 @@ const links = [
   { href: "#ecossistema", label: "Ecossistema", num: "02" },
   { href: "#consultoria", label: "Consultoria", num: "03" },
   { href: "#ia", label: "IA", num: "04" },
-  { href: "#clientes", label: "Clientes", num: "05" },
-  { href: "#diferenciais", label: "Método", num: "06" },
+  { href: "#crm", label: "CRM", num: "05" },
+  { href: "#clientes", label: "Clientes", num: "06" },
+  { href: "#diferenciais", label: "Método", num: "07" },
 ];
 
 export function Navbar() {
