@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { Store, GraduationCap, Mic, Building2, Clapperboard, ArrowUpRight } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import logoUnicorretor from "@/assets/logo-unicorretor.jpeg";
 import logoFiqueAqui from "@/assets/logo-fiqueaqui.png";
 import logoStayou from "@/assets/logo-stayou.png";
@@ -15,6 +17,7 @@ type Brand = {
   href: string;
   accent: string;
   num: string;
+  Icon: LucideIcon;
 };
 
 const brands: Brand[] = [
@@ -27,6 +30,7 @@ const brands: Brand[] = [
     href: "https://stayou.com.br/",
     accent: "oklch(0.55 0.22 305)",
     num: "01",
+    Icon: Store,
   },
   {
     id: "unicorretor",
@@ -37,6 +41,7 @@ const brands: Brand[] = [
     href: "https://unicorretor.com.br/",
     accent: "oklch(0.7 0.2 40)",
     num: "02",
+    Icon: GraduationCap,
   },
   {
     id: "staycast",
@@ -47,6 +52,7 @@ const brands: Brand[] = [
     href: "https://www.youtube.com/@staycast",
     accent: "oklch(0.7 0.24 4)",
     num: "03",
+    Icon: Mic,
   },
   {
     id: "fiqueaqui",
@@ -57,6 +63,7 @@ const brands: Brand[] = [
     href: "https://fiqueaquiimoveis.com.br/",
     accent: "oklch(0.65 0.18 145)",
     num: "04",
+    Icon: Building2,
   },
   {
     id: "stayplus",
@@ -67,6 +74,7 @@ const brands: Brand[] = [
     href: "https://stayplus.com.br/",
     accent: "oklch(0.7 0.26 350)",
     num: "05",
+    Icon: Clapperboard,
   },
 ];
 
