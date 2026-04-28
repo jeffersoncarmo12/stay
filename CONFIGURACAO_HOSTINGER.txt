@@ -1,0 +1,39 @@
+═══════════════════════════════════════════════════════════
+  CONFIGURAÇÕES PARA COPIAR NA HOSTINGER
+═══════════════════════════════════════════════════════════
+
+📋 COPIE E COLE EXATAMENTE ESTAS CONFIGURAÇÕES:
+
+Framework preset: Vite
+
+Branch: main
+
+Node version: 22.x
+
+Root directory: /
+
+Build command: npm run build
+
+Package manager: npm
+
+Output directory: dist
+
+═══════════════════════════════════════════════════════════
+
+✅ CHECKLIST:
+
+[ ] Fiz push para o GitHub
+[ ] Conectei GitHub na Hostinger
+[ ] Copiei as configurações acima
+[ ] Cliquei em "Save and redeploy"
+[ ] Aguardei 2-5 minutos
+[ ] Testei o site no domínio
+
+═══════════════════════════════════════════════════════════
+
+🔗 LINKS ÚTEIS:
+
+hPanel: https://hpanel.hostinger.com
+Documentação: README_DEPLOY.md
+
+═══════════════════════════════════════════════════════════
