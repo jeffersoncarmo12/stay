@@ -65,7 +65,7 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-4">
-          <span className="hidden md:inline marker">{time}</span>
+          {time && <span className="hidden md:inline marker">{time}</span>}
           <a
             href="#contato"
             className="group relative inline-flex items-center gap-2 rounded-full bg-paper text-ink px-4 py-2 text-[13px] font-medium overflow-hidden"

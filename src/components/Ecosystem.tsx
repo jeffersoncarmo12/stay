@@ -1,12 +1,29 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Store, GraduationCap, Mic, Building2, Clapperboard, ArrowUpRight } from "lucide-react";
+import {
+  Store,
+  GraduationCap,
+  Mic,
+  Building2,
+  Clapperboard,
+  ArrowUpRight,
+  Globe,
+  Youtube,
+  Instagram,
+  Briefcase,
+  Sparkles,
+  PlayCircle,
+  Users,
+  FileText,
+} from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import logoUnicorretor from "@/assets/logo-unicorretor.jpeg";
 import logoFiqueAqui from "@/assets/logo-fiqueaqui.png";
 import logoStayou from "@/assets/logo-stayou.png";
 import logoStaycast from "@/assets/logo-staycast.png";
 import logoStayPlus from "@/assets/logo-stayplus.png";
+
+type BrandLink = { label: string; href: string; Icon: LucideIcon };
 
 type Brand = {
   id: string;
@@ -18,6 +35,7 @@ type Brand = {
   accent: string;
   num: string;
   Icon: LucideIcon;
+  links: BrandLink[];
 };
 
 const brands: Brand[] = [
@@ -31,6 +49,13 @@ const brands: Brand[] = [
     accent: "oklch(0.55 0.22 305)",
     num: "01",
     Icon: Store,
+    links: [
+      { label: "Site oficial", href: "https://stayou.com.br/", Icon: Globe },
+      { label: "Stayou Business", href: "https://business.stayou.com.br/", Icon: Briefcase },
+      { label: "Portal do Agente", href: "https://agente.stayou.com.br/", Icon: Users },
+      { label: "Apresentação", href: "https://stayempresas.com.br/apresentacao-stayou-click/", Icon: Sparkles },
+      { label: "Vídeo institucional", href: "https://www.youtube.com/watch?v=MvQs26_iA4Q", Icon: PlayCircle },
+    ],
   },
   {
     id: "unicorretor",
@@ -42,6 +67,14 @@ const brands: Brand[] = [
     accent: "oklch(0.7 0.2 40)",
     num: "02",
     Icon: GraduationCap,
+    links: [
+      { label: "Site oficial", href: "https://unicorretor.com.br/", Icon: Globe },
+      { label: "Corporativo", href: "https://corporativo.unicorretor.com.br/", Icon: Briefcase },
+      { label: "Oferta", href: "https://oferta.unicorretor.com.br/", Icon: Sparkles },
+      { label: "YouTube", href: "https://www.youtube.com/@unicorretor", Icon: Youtube },
+      { label: "Instagram", href: "https://www.instagram.com/unicorretor/", Icon: Instagram },
+      { label: "Apresentação", href: "https://stayempresas.com.br/apresentacao-unicorretor/", Icon: FileText },
+    ],
   },
   {
     id: "staycast",
@@ -53,6 +86,11 @@ const brands: Brand[] = [
     accent: "oklch(0.7 0.24 4)",
     num: "03",
     Icon: Mic,
+    links: [
+      { label: "YouTube", href: "https://www.youtube.com/@staycast", Icon: Youtube },
+      { label: "Instagram", href: "https://www.instagram.com/stay.cast/", Icon: Instagram },
+      { label: "Apresentação", href: "https://stayempresas.com.br/apresentacao-stay-cast/", Icon: FileText },
+    ],
   },
   {
     id: "fiqueaqui",
@@ -64,6 +102,12 @@ const brands: Brand[] = [
     accent: "oklch(0.65 0.18 145)",
     num: "04",
     Icon: Building2,
+    links: [
+      { label: "Site oficial", href: "https://fiqueaquiimoveis.com.br/", Icon: Globe },
+      { label: "Vídeo institucional", href: "https://www.youtube.com/watch?v=Dt-nmmoYeRo", Icon: PlayCircle },
+      { label: "Instagram", href: "https://www.instagram.com/fiqueaquiimoveis/", Icon: Instagram },
+      { label: "Apresentação", href: "https://stayempresas.com.br/apresentacao-fique-aqui-imoveis/", Icon: FileText },
+    ],
   },
   {
     id: "stayplus",
@@ -75,6 +119,12 @@ const brands: Brand[] = [
     accent: "oklch(0.7 0.26 350)",
     num: "05",
     Icon: Clapperboard,
+    links: [
+      { label: "Site oficial", href: "https://stayplus.com.br/", Icon: Globe },
+      { label: "Vídeo institucional", href: "https://www.youtube.com/watch?v=O8K2RbOKTwg", Icon: PlayCircle },
+      { label: "Instagram", href: "https://www.instagram.com/stayplusprodutora", Icon: Instagram },
+      { label: "Apresentação", href: "https://drive.google.com/file/d/15AYxbqBt5WmEbkYtrLT2qMx1cBKjUlAH/view", Icon: FileText },
+    ],
   },
 ];
 
@@ -185,47 +235,61 @@ export function Ecosystem() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="relative aspect-[4/5] rounded-3xl overflow-hidden ring-soft"
+              className="relative rounded-3xl overflow-hidden ring-soft"
             >
-              {/* Color field */}
-              <div
-                className="absolute inset-0"
-                style={{
-                  background: `radial-gradient(ellipse at 30% 20%, ${current.accent}, transparent 70%), linear-gradient(160deg, oklch(0.18 0.02 270), oklch(0.13 0.015 270))`,
-                }}
-              />
-              <div className="absolute inset-0 grid-pattern opacity-40" />
+              {/* Visual hero */}
+              <div className="relative aspect-[5/4]">
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background: `radial-gradient(ellipse at 30% 20%, ${current.accent}, transparent 70%), linear-gradient(160deg, oklch(0.18 0.02 270), oklch(0.13 0.015 270))`,
+                  }}
+                />
+                <div className="absolute inset-0 grid-pattern opacity-40" />
+                <div className="absolute inset-8 border border-white/10 rounded-full animate-orbit" />
+                <div className="absolute inset-16 border border-white/5 rounded-full" />
 
-              {/* Orbital ring */}
-              <div className="absolute inset-12 border border-white/10 rounded-full animate-orbit" />
-              <div className="absolute inset-20 border border-white/5 rounded-full" />
-
-              {/* Logo */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <motion.div
-                  key={current.id + "logo"}
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                  className="logo-glow"
-                >
-                  <img src={current.logo} alt={current.name} className="h-32 w-32 object-contain" />
-                </motion.div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <motion.div
+                    key={current.id + "logo"}
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    className="logo-glow"
+                  >
+                    <img src={current.logo} alt={current.name} className="h-28 w-28 object-contain" />
+                  </motion.div>
+                </div>
               </div>
 
-              {/* Footer info */}
-              <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 bg-gradient-to-t from-black/60 to-transparent">
+              {/* Info + links */}
+              <div className="relative p-6 md:p-7 bg-gradient-to-b from-black/40 to-black/70 border-t border-border">
                 <span className="marker">{current.category}</span>
                 <h4 className="font-display text-2xl md:text-3xl mt-2">{current.name}</h4>
                 <p className="mt-2 text-sm text-foreground/70 leading-relaxed">{current.description}</p>
-                <a
-                  href={current.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 mt-4 text-sm font-medium hover:gap-2.5 transition-all"
-                >
-                  Visitar site →
-                </a>
+
+                <div className="mt-5 grid grid-cols-2 gap-2">
+                  {current.links.map((l) => {
+                    const LIcon = l.Icon;
+                    return (
+                      <a
+                        key={l.href}
+                        href={l.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/link flex items-center gap-2.5 rounded-xl border border-border bg-white/[0.02] px-3 py-2.5 text-xs text-foreground/80 hover:text-paper hover:bg-white/[0.06] hover:border-white/15 active:scale-[0.97] transition-all"
+                      >
+                        <span
+                          className="flex h-7 w-7 items-center justify-center rounded-lg transition-all duration-500 group-hover/link:scale-110"
+                          style={{ background: `${current.accent.replace(")", " / 0.18)")}` }}
+                        >
+                          <LIcon className="h-3.5 w-3.5" strokeWidth={1.75} />
+                        </span>
+                        <span className="truncate">{l.label}</span>
+                      </a>
+                    );
+                  })}
+                </div>
               </div>
             </motion.div>
           </div>
