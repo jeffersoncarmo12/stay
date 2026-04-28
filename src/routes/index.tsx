@@ -4,6 +4,8 @@ import { Hero } from "@/components/Hero";
 import { Marquee } from "@/components/Marquee";
 import { Manifesto } from "@/components/Manifesto";
 import { Ecosystem } from "@/components/Ecosystem";
+import { Consulting } from "@/components/Consulting";
+import { Clients } from "@/components/Clients";
 import { Method } from "@/components/Method";
 import { Field } from "@/components/Field";
 import { CTA } from "@/components/CTA";
@@ -34,6 +36,8 @@ function Index() {
       <Marquee />
       <Manifesto />
       <Ecosystem />
+      <Consulting />
+      <Clients />
       <Method />
       <Field />
       <CTA />
