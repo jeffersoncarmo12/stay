@@ -47,7 +47,7 @@ export function Navbar() {
 
       <div className="relative mx-auto max-w-[1400px] px-6 md:px-10 py-5 flex items-center justify-between">
         <a href="#top" className="group flex items-center gap-3">
-          <img src={logo} alt="Stay Logo" className="h-12 w-auto" />
+          <img src={logo} alt="Stay Logo" className="h-20 md:h-24 w-auto" />
         </a>
 
         <nav className="hidden lg:flex items-center gap-1">

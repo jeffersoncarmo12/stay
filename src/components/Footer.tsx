@@ -30,7 +30,7 @@ export function Footer() {
         <div className="grid grid-cols-12 gap-6 md:gap-8 mb-20">
           <div className="col-span-12 md:col-span-5">
             <a href="#top" className="flex items-center gap-3">
-              <img src={logo} alt="Stay Logo" className="h-16 w-auto" />
+              <img src={logo} alt="Stay Logo" className="h-24 md:h-32 w-auto" />
             </a>
             <p className="mt-6 text-sm text-muted-foreground leading-relaxed max-w-sm">
               Ecossistema de tecnologia, mídia e educação para o mercado imobiliário brasileiro.
