@@ -1,4 +1,5 @@
 import { Instagram, Youtube, Send, MessageCircle } from "lucide-react";
+import logo from "../assets/logo.png";
 
 const cols = [
   {
@@ -28,8 +29,8 @@ export function Footer() {
       <div className="mx-auto max-w-[1400px]">
         <div className="grid grid-cols-12 gap-6 md:gap-8 mb-20">
           <div className="col-span-12 md:col-span-5">
-            <a href="#top" className="flex items-baseline gap-3">
-              <span className="font-display text-4xl italic text-paper">Stay</span>
+            <a href="#top" className="flex items-center gap-3">
+              <img src={logo} alt="Stay Logo" className="h-12 w-auto" />
               <span className="marker">Empresas · Holding</span>
             </a>
             <p className="mt-6 text-sm text-muted-foreground leading-relaxed max-w-sm">

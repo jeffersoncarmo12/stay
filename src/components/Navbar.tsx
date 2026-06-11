@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "../assets/logo.png";
 
 const links = [
   { href: "#ecossistema", label: "Ecossistema", num: "02" },
@@ -45,8 +46,8 @@ export function Navbar() {
       </AnimatePresence>
 
       <div className="relative mx-auto max-w-[1400px] px-6 md:px-10 py-5 flex items-center justify-between">
-        <a href="#top" className="group flex items-baseline gap-3">
-          <span className="font-display text-2xl tracking-tight italic text-paper">Stay</span>
+        <a href="#top" className="group flex items-center gap-3">
+          <img src={logo} alt="Stay Logo" className="h-8 w-auto" />
           <span className="marker hidden sm:inline">Empresas</span>
         </a>
 
