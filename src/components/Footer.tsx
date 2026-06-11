@@ -30,8 +30,7 @@ export function Footer() {
         <div className="grid grid-cols-12 gap-6 md:gap-8 mb-20">
           <div className="col-span-12 md:col-span-5">
             <a href="#top" className="flex items-center gap-3">
-              <img src={logo} alt="Stay Logo" className="h-12 w-auto" />
-              <span className="marker">Empresas · Holding</span>
+              <img src={logo} alt="Stay Logo" className="h-16 w-auto" />
             </a>
             <p className="mt-6 text-sm text-muted-foreground leading-relaxed max-w-sm">
               Ecossistema de tecnologia, mídia e educação para o mercado imobiliário brasileiro.
@@ -94,15 +93,7 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Giant signature */}
-        <div className="relative">
-          <div className="hairline mb-10" />
-          <h2 className="font-display italic text-[28vw] md:text-[18rem] leading-[0.8] tracking-[-0.05em] text-foreground/[0.06] select-none pointer-events-none">
-            Stay
-          </h2>
-        </div>
-
-        <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground border-t border-border pt-6 mt-2">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground border-t border-border pt-6 mt-10">
           <p>Stay Holding · MMXXVI · Todos os direitos reservados.</p>
           <p>Composto e produzido por <span className="text-paper">Stay Plus</span></p>
         </div>

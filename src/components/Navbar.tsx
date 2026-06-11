@@ -47,8 +47,7 @@ export function Navbar() {
 
       <div className="relative mx-auto max-w-[1400px] px-6 md:px-10 py-5 flex items-center justify-between">
         <a href="#top" className="group flex items-center gap-3">
-          <img src={logo} alt="Stay Logo" className="h-8 w-auto" />
-          <span className="marker hidden sm:inline">Empresas</span>
+          <img src={logo} alt="Stay Logo" className="h-12 w-auto" />
         </a>
 
         <nav className="hidden lg:flex items-center gap-1">
