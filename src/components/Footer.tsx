@@ -21,6 +21,13 @@ const cols = [
       { label: "Convite", href: "#contato" },
     ],
   },
+  {
+    title: "Plataformas",
+    links: [
+      { label: "Parceiros", href: "https://www.parceiros.stayou.com.br/" },
+      { label: "Onboarding", href: "https://onboarding.stayou.com.br/" },
+    ],
+  },
 ];
 
 export function Footer() {
@@ -28,7 +35,7 @@ export function Footer() {
     <footer id="contato" className="relative border-t border-border pt-24 pb-10 px-6 md:px-10 overflow-hidden">
       <div className="mx-auto max-w-[1400px]">
         <div className="grid grid-cols-12 gap-6 md:gap-8 mb-20">
-          <div className="col-span-12 md:col-span-5">
+          <div className="col-span-12 md:col-span-4">
             <a href="#top" className="flex items-center gap-3">
               <img src={logo} alt="Stay Logo" className="h-24 md:h-32 w-auto" />
             </a>
@@ -75,7 +82,7 @@ export function Footer() {
             </div>
           ))}
 
-          <div className="col-span-12 md:col-span-3">
+          <div className="col-span-12 md:col-span-2">
             <h4 className="marker mb-5">Contato</h4>
             <ul className="space-y-3 text-sm text-foreground/80">
               <li>
